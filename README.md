@@ -79,9 +79,10 @@ BRACKEN OUTPUT PRODUCED: sample2.bracken.tsv
 PROGRAM END TIME: 03-05-2024 13:18:44  
   Bracken complete.  
 
-## 6. Merge the bracken output files for teh two samples
+## 6. Merge the bracken output files for the two samples using the provided python script (merge_profiling_reports.py)
 ```{bash, eval=FALSE}
 mkdir bracken_output
 cp sample2_bracken.report sample1_bracken.report bracken_output/
 python merge_profiling_reports.py -i bracken_output/ -o merged
 ```
+Be Happyyyyyy! :)
