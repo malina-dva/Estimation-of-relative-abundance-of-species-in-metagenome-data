@@ -125,4 +125,4 @@ Finally we need to run taxpasta on the bracken tsv outputs
 ```{bash, eval=FALSE}
 taxpasta merge -p bracken -o report_bracken_with_lineage1.tsv --taxonomy   /home/malina/taxa_DB/taxdump --add-lineage sample1.bracken.tsv sample2.bracken.tsv
 ```
-And we end up having the entire lineage next to the species taxids. The info of taxa lineage together with the estimated count accross samples, provided in a tabular format, will be sufficient to continue our analyses in R and work on identifying the differentially abundant species between groups of samples for example. Enjoy!
+And we end up having the entire lineage next to the species taxids. The info of taxa lineage together with the estimated counts accross samples, provided in a tabular format, will be sufficient to continue our analyses in R and work on identifying the differentially abundant species between groups of samples for example. Enjoy!
