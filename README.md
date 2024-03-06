@@ -80,9 +80,49 @@ PROGRAM END TIME: 03-05-2024 13:18:44
   Bracken complete.  
 
 ## 6. Merge the bracken output files for the two samples using the provided python script (merge_profiling_reports.py)
+To be able to run the python script, we will need to install pandas in our conda environment
 ```{bash, eval=FALSE}
+conda install pandas
 mkdir bracken_output
 cp sample2_bracken.report sample1_bracken.report bracken_output/
 python merge_profiling_reports.py -i bracken_output/ -o merged
 ```
-Be Happyyyyyy! :)
+You can obtain the results not only for S (species level) but any other taxlevel, by simply filtering the taxlevel column for it. 
+Yet, the full lineage specification won't be available after running the step #6.
+On order to obtain it, we can use taxpasta
+## 7. Merge the bracken output files for the two samples using taxapasta and obstain the full taxonomic lineage for each species
+Taxpasta works with python>=3.8, so I advice we create a whole new conda environment specifying the version of python needed for taxpasta to work
+```{bash, eval=FALSE}
+conda create -n myenv python=3.8
+conda activate myenv
+pip install taxpasta
+```
+if pip requires additional dependences you will have to install them, as per usual
+Taxpasta also requires a set of 'taxonomy' files for full lineage info to be appended to bracken results.
+One can download those files in a new directory 
+```{bash, eval=FALSE}
+mkdir taxa_DB
+cd taxa_DB
+curl -O ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz.md5
+curl -O ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+md5sum --check taxdump.tar.gz.md5
+mkdir taxdump
+tar -C taxdump -xzf taxdump.tar.gz
+tree taxdump
+```
+taxdump
+├── citations.dmp
+├── delnodes.dmp
+├── division.dmp
+├── gc.prt
+├── gencode.dmp
+├── images.dmp
+├── merged.dmp
+├── names.dmp
+├── nodes.dmp
+└── readme.txt
+Finally we need to run taxpasta on the bracken tsv outputs 
+```{bash, eval=FALSE}
+taxpasta merge -p bracken -o report_bracken_with_lineage1.tsv --taxonomy   /home/malina/taxa_DB/taxdump --add-lineage sample1.bracken.tsv sample2.bracken.tsv
+```
+And we end up having the entire lineage next to the species taxids. The info of taxa lineage together with the estimated count accross samples, provided in a tabular format, will be sufficient to continue our analyses in R and work on identifying the differentially abundant species between groups of samples for example. Enjoy!
