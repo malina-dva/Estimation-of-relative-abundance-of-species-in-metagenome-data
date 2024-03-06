@@ -17,7 +17,7 @@ tar -xvzf k2_standard_08gb_20240112.tar.gz
 !Attention! Takes a while to run...
 ```
 ## 3. Run kraken for sample1 
-Only run it if you have the computational resources! Even if you do, loeading the database may take up to 30 min ... so be patient    
+Only run it if you have the computational resources! Even if you do, loeading the database may take up to 30 min ... so be patient..      
 ```{bash, eval=FALSE}
 kraken2 --use-names --threads 4 --db /home/malina/krakenDB/  --report sample1.report --paired tara_reads_R1.5000.fastq tara_reads_R2.5000.fastq > sample1.kraken
 ```
@@ -40,7 +40,7 @@ bracken -d /home/malina/krakenDB -i sample1.report -l S -o sample1.bracken.tsv
  >> Checking for Valid Options...  
  >> Running Bracken  
       >> python src/est_abundance.py -i sample1.report -o sample1.bracken.tsv -k /home/malina/krakenDB/database100mers.kmer_distrib -l S -t 0  
-PROGRAM START TIME: 03-05-2024 13:16:02  
+PROGRAM START TIME:  
 BRACKEN SUMMARY (Kraken report: sample1.report)  
     >>> Threshold: 0  
     >>> Number of species in sample: 104  
@@ -53,7 +53,7 @@ BRACKEN SUMMARY (Kraken report: sample1.report)
           >> Reads not distributed (eg. no species above threshold): 5  
           >> Unclassified reads: 4647  
 BRACKEN OUTPUT PRODUCED: sample1.bracken.tsv  
-PROGRAM END TIME: 03-05-2024 13:16:02  
+PROGRAM END TIME:  
   Bracken complete.  
 
 ## 5. Run bracken for sample2 
@@ -63,7 +63,7 @@ bracken -d /home/malina/krakenDB -i sample2.report -l S -o sample2.bracken.tsv
 >> Checking for Valid Options...  
  >> Running Bracken  
       >> python src/est_abundance.py -i sample2.report -o sample2.bracken.tsv -k /home/malina/krakenDB/database100mers.kmer_distrib -l S -t 0  
-PROGRAM START TIME: 03-05-2024 13:18:44  
+PROGRAM START TIME:  
 BRACKEN SUMMARY (Kraken report: sample2.report)  
     >>> Threshold: 0  
     >>> Number of species in sample: 113  
@@ -76,7 +76,7 @@ BRACKEN SUMMARY (Kraken report: sample2.report)
           >> Reads not distributed (eg. no species above threshold): 11  
           >> Unclassified reads: 4592  
 BRACKEN OUTPUT PRODUCED: sample2.bracken.tsv  
-PROGRAM END TIME: 03-05-2024 13:18:44  
+PROGRAM END TIME:  
   Bracken complete.  
 
 ## 6. Merge the bracken output files for the two samples using the provided python script (merge_profiling_reports.py)
