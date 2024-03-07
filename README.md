@@ -19,7 +19,7 @@ tar -xvzf k2_standard_08gb_20240112.tar.gz
 ## 3. Run kraken for sample1 
 Only run it if you have the computational resources! Even if you do, loeading the database may take up to 30 min ... so be patient..      
 ```{bash, eval=FALSE}
-kraken2 --use-names --threads 4 --db /home/malina/krakenDB/  --report sample1.report --paired sample1_R1.fastq sample1_R2.5000.fastq > sample1.kraken
+kraken2 --use-names --threads 4 --db /home/malina/krakenDB/  --report sample1.report --paired sample1_R1.fastq sample1_R2.fastq > sample1.kraken
 ```
 Loading database information... done.  
 5000 sequences (1.26 Mbp) processed in 0.480s (624.8 Kseq/m, 157.44 Mbp/m).  
