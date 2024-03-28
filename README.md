@@ -90,7 +90,7 @@ python merge_profiling_reports.py -i bracken_output/ -o merged
 You can obtain the results not only for S (species level) but any other taxlevel, by simply filtering the taxlevel column for it.   
 Yet, the full lineage specification won't be available after running the step #6.  
 In order to obtain it, we can use taxpasta  
-## 7. Merge the bracken output files for the two samples using taxapasta and obstain the full taxonomic lineage for each species
+## 7. Merge the bracken output files for the two samples using taxapasta and obtain the full taxonomic lineage for each species
 Taxpasta works with python>=3.8, so it will be better if we create a whole new conda environment specifying the version of python needed for taxpasta to work
 ```{bash, eval=FALSE}
 conda create -n myenv python=3.8
