@@ -1,5 +1,6 @@
 # Estimation-of-relative-abundance-of-species-in-metagenenome-data
-Complete pipeline for estimating the relative abundance of microbial species using kraken2 and bracken 
+Complete pipeline for estimating the relative abundance of microbial species using kraken2 and bracken    
+Youtube video tutorial series: https://www.youtube.com/watch?v=LoMORt9u1ys&t=17s  
 ## 1. Install the Conda Environment
 
 ```{bash, eval=FALSE}
