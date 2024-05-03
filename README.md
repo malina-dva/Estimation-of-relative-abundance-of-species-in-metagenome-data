@@ -2,8 +2,8 @@
 Complete pipeline for estimating the relative abundance of microbial species using kraken2 and bracken    
 Youtube video tutorial series:    
 
-![](https://www.youtube.com/watch?v=LoMORt9u1ys)    
-
+[![Getting started with kraken and bracken](http://img.youtube.com/vi/LoMORt9u1ys/0.jpg)](https://[www.youtube.com/watch?v=kR_iHVau8GI](https://www.youtube.com/watch?v=LoMORt9u1ys) "Getting started with kraken and bracken" )
+   
 ## 1. Install the Conda Environment
 
 ```{bash, eval=FALSE}
